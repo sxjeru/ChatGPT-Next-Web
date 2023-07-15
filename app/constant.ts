@@ -58,7 +58,7 @@ export const OpenaiPath = {
 
 export const DEFAULT_INPUT_TEMPLATE = `{{input}}`; // input / time / model / lang
 export const DEFAULT_SYSTEM_TEMPLATE = `
-You are ChatGPT, a large language model trained by OpenAI.
+你是ChatGPT，一个由OpenAI训练的大型语言模型。
 Knowledge cutoff: 2021-09
 Current model: {{model}}
 Current time: {{time}}`;
@@ -69,55 +69,43 @@ export const DEFAULT_MODELS = [
     available: true,
   },
   {
-    name: "gpt-4-0314",
-    available: false,
-  },
-  {
-    name: "gpt-4-0613",
-    available: false,
-  },
-  {
     name: "gpt-4-32k",
     available: true,
-  },
-  {
-    name: "gpt-4-32k-0314",
-    available: false,
-  },
-  {
-    name: "gpt-4-32k-0613",
-    available: false,
   },
   {
     name: "gpt-3.5-turbo",
     available: true,
   },
   {
-    name: "gpt-3.5-turbo-0301",
-    available: false,
-  },
-  {
-    name: "gpt-3.5-turbo-0613",
-    available: false,
-  },
-  {
     name: "gpt-3.5-turbo-16k",
     available: true,
-  },
-  {
-    name: "gpt-3.5-turbo-16k-0613",
-    available: false,
   },
   {
     name: "cohere:command",
     available: true,
   },
   {
-    name: "claude-1",
+    name: "cohere:command-nightly",
     available: true,
   },
   {
-    name: "claude-2",
+    name: "anthropic:claude-1",
+    available: true,
+  },
+  {
+    name: "anthropic:claude-1-100k",
+    available: true,
+  },
+  {
+    name: "anthropic:claude-2",
+    available: true,
+  },
+  {
+    name: "anthropic:claude-instant-1",
+    available: true,
+  },
+  {
+    name: "anthropic:claude-instant-1-100k",
     available: true,
   },
 ] as const;
