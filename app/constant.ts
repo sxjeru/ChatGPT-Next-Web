@@ -118,42 +118,7 @@ export const KnowledgeCutOffDate: Record<string, string> = {
 };
 
 export const DEFAULT_MODELS = [
-  {
-    name: "gpt-4",
-    available: true,
-    provider: {
-      id: "openai",
-      providerName: "OpenAI",
-      providerType: "openai",
-    },
-  },
-  {
-    name: "gpt-4-32k",
-    available: true,
-    provider: {
-      id: "openai",
-      providerName: "OpenAI",
-      providerType: "openai",
-    },
-  },
-  {
-    name: "gpt-3.5-turbo",
-    available: true,
-    provider: {
-      id: "openai",
-      providerName: "OpenAI",
-      providerType: "openai",
-    },
-  },
-  {
-    name: "gpt-3.5-turbo-16k",
-    available: true,
-    provider: {
-      id: "openai",
-      providerName: "OpenAI",
-      providerType: "openai",
-    },
-  },
+
   {
     name: "cohere:command",
     available: true,
@@ -172,8 +137,26 @@ export const DEFAULT_MODELS = [
       providerType: "cohere",
     },
   },
+  // {
+  //   name: "anthropic:claude-1",
+  //   available: true,
+  //   provider: {
+  //     id: "anthropic",
+  //     providerName: "OpenAI",
+  //     providerType: "anthropic",
+  //   },
+  // },
+  // {
+  //   name: "anthropic:claude-1-100k",
+  //   available: true,
+  //   provider: {
+  //     id: "anthropic",
+  //     providerName: "OpenAI",
+  //     providerType: "anthropic",
+  //   },
+  // },
   {
-    name: "anthropic:claude-1",
+    name: "anthropic:claude-2.0",
     available: true,
     provider: {
       id: "anthropic",
@@ -182,7 +165,7 @@ export const DEFAULT_MODELS = [
     },
   },
   {
-    name: "anthropic:claude-1-100k",
+    name: "anthropic:claude-2.1",
     available: true,
     provider: {
       id: "anthropic",
@@ -190,8 +173,17 @@ export const DEFAULT_MODELS = [
       providerType: "anthropic",
     },
   },
+  // {
+  //   name: "anthropic:claude-3",
+  //   available: true,
+  //   provider: {
+  //     id: "anthropic",
+  //     providerName: "OpenAI",
+  //     providerType: "anthropic",
+  //   },
+  // },
   {
-    name: "anthropic:claude-2",
+    name: "anthropic:claude-instant-1.2",
     available: true,
     provider: {
       id: "anthropic",
@@ -199,33 +191,15 @@ export const DEFAULT_MODELS = [
       providerType: "anthropic",
     },
   },
-  {
-    name: "anthropic:claude-3",
-    available: true,
-    provider: {
-      id: "anthropic",
-      providerName: "OpenAI",
-      providerType: "anthropic",
-    },
-  },
-  {
-    name: "anthropic:claude-instant-1",
-    available: true,
-    provider: {
-      id: "anthropic",
-      providerName: "OpenAI",
-      providerType: "anthropic",
-    },
-  },
-  {
-    name: "anthropic:claude-instant-1-100k",
-    available: true,
-    provider: {
-      id: "anthropic",
-      providerName: "OpenAI",
-      providerType: "anthropic",
-    },
-  },
+  // {
+  //   name: "anthropic:claude-instant-1-100k",
+  //   available: true,
+  //   provider: {
+  //     id: "anthropic",
+  //     providerName: "OpenAI",
+  //     providerType: "anthropic",
+  //   },
+  // },
 ] as const;
 
 export const CHAT_PAGE_SIZE = 15;
