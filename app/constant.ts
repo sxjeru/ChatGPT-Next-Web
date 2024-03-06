@@ -8,8 +8,10 @@ export const FETCH_COMMIT_URL = `https://api.github.com/repos/${OWNER}/${REPO}/c
 export const FETCH_TAG_URL = `https://api.github.com/repos/${OWNER}/${REPO}/tags?per_page=1`;
 export const RUNTIME_CONFIG_DOM = "danger-runtime-config";
 
-export const DEFAULT_CORS_HOST = "https://nb.nextweb.fun";
-export const DEFAULT_API_HOST = `${DEFAULT_CORS_HOST}/api/proxy`;
+export const DEFAULT_API_HOST = "https://api.nextchat.dev";
+export const OPENAI_BASE_URL = "https://api.openai.com";
+
+export const GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/";
 
 export enum Path {
   Home = "/",
@@ -22,10 +24,12 @@ export enum Path {
 
 export enum ApiPath {
   Cors = "/api/cors",
+  OpenAI = "/api/openai",
 }
 
 export enum SlotID {
   AppBody = "app-body",
+  CustomModel = "custom-model",
 }
 
 export enum FileName {
@@ -59,6 +63,17 @@ export const REQUEST_TIMEOUT_MS = 60000;
 
 export const EXPORT_MESSAGE_CLASS_NAME = "export-markdown";
 
+export enum ServiceProvider {
+  OpenAI = "OpenAI",
+  Azure = "Azure",
+  Google = "Google",
+}
+
+export enum ModelProvider {
+  GPT = "GPT",
+  GeminiPro = "GeminiPro",
+}
+
 export const OpenaiPath = {
   ChatPath: "api/openai/chat/completions",
   UsagePath: "dashboard/billing/usage",
@@ -66,63 +81,139 @@ export const OpenaiPath = {
   ListModelPath: "v1/models",
 };
 
+export const Azure = {
+  ExampleEndpoint: "https://{resource-url}/openai/deployments/{deploy-id}",
+};
+
+export const Google = {
+  ExampleEndpoint: "https://generativelanguage.googleapis.com/",
+  ChatPath: "v1beta/models/gemini-pro:generateContent",
+  VisionChatPath: "v1beta/models/gemini-pro-vision:generateContent",
+
+  // /api/openai/v1/chat/completions
+};
+
 export const DEFAULT_INPUT_TEMPLATE = `{{input}}`; // input / time / model / lang
 export const DEFAULT_SYSTEM_TEMPLATE = `
 你是一个大型语言模型，专注于用中文帮人解决各种问题。
 Knowledge cutoff: 2023-12
 Current model: {{model}}
-Current time: {{time}}`;
+Current time: {{time}}
+Latex inline: $x^2$ 
+Latex block: $$e=mc^2$$
+`;
 
 export const SUMMARIZE_MODEL = "gpt-3.5-turbo";
+export const GEMINI_SUMMARIZE_MODEL = "gemini-pro";
 
 export const DEFAULT_MODELS = [
   {
     name: "gpt-4",
     available: true,
+    provider: {
+      id: "openai",
+      providerName: "OpenAI",
+      providerType: "openai",
+    },
   },
   {
     name: "gpt-4-32k",
     available: true,
+    provider: {
+      id: "openai",
+      providerName: "OpenAI",
+      providerType: "openai",
+    },
   },
   {
     name: "gpt-3.5-turbo",
     available: true,
+    provider: {
+      id: "openai",
+      providerName: "OpenAI",
+      providerType: "openai",
+    },
   },
   {
     name: "gpt-3.5-turbo-16k",
     available: true,
+    provider: {
+      id: "openai",
+      providerName: "OpenAI",
+      providerType: "openai",
+    },
   },
   {
     name: "cohere:command",
     available: true,
+    provider: {
+      id: "cohere",
+      providerName: "cohere",
+      providerType: "cohere",
+    },
   },
   {
     name: "cohere:command-nightly",
     available: true,
+    provider: {
+      id: "cohere",
+      providerName: "cohere",
+      providerType: "cohere",
+    },
   },
   {
     name: "anthropic:claude-1",
     available: true,
+    provider: {
+      id: "anthropic",
+      providerName: "Anthropic",
+      providerType: "anthropic",
+    },
   },
   {
     name: "anthropic:claude-1-100k",
     available: true,
+    provider: {
+      id: "anthropic",
+      providerName: "Anthropic",
+      providerType: "anthropic",
+    },
   },
   {
     name: "anthropic:claude-2",
     available: true,
+    provider: {
+      id: "anthropic",
+      providerName: "Anthropic",
+      providerType: "anthropic",
+    },
   },
   {
     name: "anthropic:claude-3",
     available: true,
+    provider: {
+      id: "anthropic",
+      providerName: "Anthropic",
+      providerType: "anthropic",
+    },
   },
   {
     name: "anthropic:claude-instant-1",
     available: true,
+    provider: {
+      id: "anthropic",
+      providerName: "Anthropic",
+      providerType: "anthropic",
+    },
   },
   {
     name: "anthropic:claude-instant-1-100k",
     available: true,
+    provider: {
+      id: "anthropic",
+      providerName: "Anthropic",
+      providerType: "anthropic",
+    },
   },
 ] as const;
 
